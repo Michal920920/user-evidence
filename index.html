@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Evidence osob</title>
+	<link rel='stylesheet' type='text/css' href='./src/css/evidence.css'/>
+	<script type="text/javascript" src="./src/js/evidence.js"></script>
+</head>
+<body>
+<header>
+	<div class="container">
+		<button id="js-create-user">Založit osobu</button>
+		<button id="js-show-list">Zobrazit seznam</button>
+	</div>
+</header>
+<main class="container">
+	<section id="js-section-form" class="evidence-form-wrp">
+		<form id="js-evidence-form">
+			<fieldset>
+				<legend>Vytvoření záznamu</legend>
+				<div class="row">
+					<label for="first_name" class="label">Jméno</label>
+					<input id="first_name" name="first_name" type="text" maxlength="50" required>
+				</div>
+				<div class="row">
+					<label for="surname" class="label">Příjmení</label>
+					<input id="surname" name="surname" type="text" maxlength="50" required>
+				</div>
+				<div class="row" id="autocomplete">
+					<label for="street_num" class="label">Adresa</label>
+					<input id="street_num" name="street_num" type="text" maxlength="200" required>
+				</div>
+				<div class="row">
+					<label for="city" class="label">Obec</label>
+					<input readonly id="city" type="text">
+				</div>
+				<div class="row">
+					<label>Pohlaví</label>
+					<div class="radioList">
+						<label><input type="radio" name="gender_id" checked="" value="M">muž</label>
+						<label><input type="radio" name="gender_id" value="F">žena</label>
+					</div>
+				</div>
+				<div class="row">
+					<label for="date_birth" class="label">Datum narození</label>
+					<input id="date_birth" name="date_birth" type="text" maxlength="10" required>
+				</div>
+				<div class="row">
+					<label for="email" class="label">Email</label>
+					<input id="email" name="email" type="email" required>
+				</div>
+				<input type="hidden" name="uuid">
+				<div class="row last">
+					<input type="submit" class="button" value="Uložit">
+					<button class="delete-button" id="js-delete-row">Smazat</button>
+				</div>
+			</fieldset>
+		</form>
+		<div id="js-user-detail" class="userDetail">
+		</div>
+	</section>
+
+	<section id="js-section-list" style="display: none">
+		<table id="js-table" class="user-list">
+			<thead>
+			<tr>
+				<th>Příjmení</th>
+				<th>Jméno</th>
+				<th>Adresa</th>
+				<th>Obec</th>
+				<th>Pohlaví</th>
+				<th>Datum narození</th>
+				<th>Email</th>
+			</tr>
+			</thead>
+		</table>
+	</section>
+</main>
+</body>
+</html>
